@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Simples com Dark Mode</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100vh; /* Use 100vh para garantir a altura total da viewport */
+        margin: 0; /* Remove a margem padrão do body */
+    }
+    
+    #esquerda {
+        float: left;
+        background-color: #e9e4e4;
+        height: 100vh;
+        width: 50%;
+
+        /*Ajuste para a centralização*/
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+    }
+
+    #direita {
+        float: right;
+        height: 100vh;
+        width: 50%;    
+        background-color: darkslategray;
+
+        /*Ajuste para a centralização*/
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+    }
+
+    #son, #night{
+        background-color: rgb(142, 142, 236);
+        color: white;
+        border: none; /* Geralmente botões não precisam de border: black solid 1px; */
+        border-radius: 10px;
+        padding: 10px 20px; /* Aumentei o padding para um visual melhor */
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 20px; /* Adiciona um espaço do texto acima */
+    }
+    
+</style>
+
+<body>
+    <div id="esquerda">
+        <h1>Minha Landing Page de Treino</h1>
+        <p>Projeto rápido para revisar HTML, CSS e JavaScript.</p>
+        <button id="son" onclick="MudarTempoDia()">Mudar Tema</button>
+    </div>
+
+    <div id="direita">
+        <h1>Minha Landing Page de Treino</h1>
+        <p>Projeto rápido para revisar HTML, CSS e JavaScript.</p>
+        <button id="night" onclick="MudarTempoNoite()">Mudar Tema</button>
+    </div>
+</body>
+<script type="text/javascript">
+    //Coletar os id da pagina
+    const esq = document.getElementById("esquerda");
+    const dir = document.getElementById("direita");
+    const sol = document.getElementById("son");
+    const noite = document.getElementById("night");
+
+    // Função para os botões
+    function MudarTempoNoite(){
+        esq.style.backgroundColor = "darkslategray";
+    }
+
+     // Função para os botões
+    function MudarTempoDia(){
+        dir.style.backgroundColor = "#e9e4e4";
+    }
+
+    //Eventos
+    sol.addEventListener('click', MudarTempoNoite);
+    noite.addEventListener('click', MudarTempoDia);
+
+</script>
+
+</html>

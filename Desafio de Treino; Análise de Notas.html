@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Treino: Análise de Notas</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        width: 100%;
+        border: none;
+    }
+
+    #principal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px 40px 40px 50px;
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-top: 5%;
+        height: 50%;
+        background-color: rgb(113, 177, 155);
+        border-radius: 10px;
+        color: black;
+    }
+
+    #btn {
+        padding: 5px 10px 5px 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: #ccc;
+    }
+
+    #btn:hover {
+        background-color: rgb(235, 235, 247);
+    }
+</style>
+
+<body>
+    <div id="principal">
+        <h1>Desafio de Treino: Análise de Notas</h1>
+        Nome: <input type="text" id="name" placeholder="Nome do Aluno">
+        Nota 1: <input type="number" id="v1" placeholder="Nota 1º Bimestre">
+        Nota 2: <input type="number" id="v2" placeholder="Nota 2º Bimestre">
+        <br><br><input type="button" id="btn" onclick="Calcular()" value="Calcular">
+        <br>Média <input type="text" id="md" readonly>
+        Situação do Aluno(a) <input type="text" id="sit" readonly>
+    </div>
+</body>
+
+<script type="text/javascript">
+    // Buscar os Id's do body
+    const nome = document.getElementById('name');
+    const valor1 = document.getElementById('v1');
+    const valor2 = document.getElementById('v2');
+    const mediaCampo = document.getElementById('md'); // Renomeado para evitar confusão
+    const situacaoCampo = document.getElementById('sit'); // Renomeado para evitar confusão
+    const botao = document.getElementById('btn');
+
+    // Funções
+    function Calcular() {
+        // 1. LEITURA E CONVERSÃO: Pega o valor e converte para número
+        const v1 = parseFloat(valor1.value);
+        const v2 = parseFloat(valor2.value);
+        
+        // Validação básica para evitar NaN
+        if (isNaN(v1) || isNaN(v2)) {
+            alert("Por favor, insira notas válidas.");
+            return; // Interrompe a função se os valores não forem números
+        }
+
+        // 2. CÁLCULO
+        const mediaCalculada = (v1 + v2) / 2;
+
+        // 3. ATRIBUIÇÃO DA MÉDIA (Use .value para inputs)
+        mediaCampo.value = mediaCalculada.toFixed(2); // Exibe com 2 casas decimais
+
+        // 4. LÓGICA DE STATUS
+        let status = '';
+        if (mediaCalculada >= 7) {
+            status = 'Aprovado!';
+        } else if (mediaCalculada >= 5 && mediaCalculada < 7) { // A condição (media < 7) é redundante aqui, mas funciona
+            status = 'Recuperação!';
+        } else {
+            status = 'Reprovado!';
+        }
+
+        // 5. ATRIBUIÇÃO DO STATUS (Use .value para inputs)
+        situacaoCampo.value = status;
+        
+        // Opcional: Aqui você pode usar o nome do aluno, mas ele não é necessário para o cálculo
+        console.log(`Análise de ${nome.value}: Média ${mediaCalculada.toFixed(2)}, Status: ${status}`);
+    }
+    
+    // Eventos (Se você já usou o onclick no HTML, a linha abaixo é opcional)
+    // botao.addEventListener('click', Calcular); 
+
+</script>
+</html>

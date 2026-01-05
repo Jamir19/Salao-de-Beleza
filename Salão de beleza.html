@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Elegance | Beleza e Bem-Estar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primaria: #f8dbd5; /* Rosa Pastel */
+            --secundaria: #d4a373; /* Dourado/Bronze */
+            --texto: #333;
+            --branco: #ffffff;
+        }
+
+        body { 
+            font-family: 'Lato', sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            color: var(--texto);
+            background-color: #fffaf9;
+        }
+
+        /* Header Moderno */
+        header { 
+            background: var(--branco); 
+            padding: 2rem 1rem; 
+            text-align: center; 
+            border-bottom: 2px solid var(--primaria);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            margin: 0; 
+            font-size: 2.5rem; 
+            color: var(--secundaria);
+        }
+
+        nav ul { list-style: none; padding: 0; margin-top: 1rem; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--texto); 
+            font-weight: bold; 
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--secundaria); }
+
+        main { max-width: 1000px; margin: auto; padding: 20px; }
+
+        /* Seção Sobre com Imagens Lado a Lado */
+        .galeria-sobre {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .galeria-sobre img {
+            width: 30%;
+            min-width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Serviços em Grid */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        article {
+            background: var(--branco);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primaria);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Formulário Estilizado */
+        form { 
+            background: var(--branco); 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid var(--primaria);
+        }
+
+        .campo { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Garante que o padding não quebre a largura */
+        }
+
+        button { 
+            background-color: var(--secundaria); 
+            color: white; 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 1rem;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #b08968; }
+
+        footer { 
+            background: #222; 
+            color: white; 
+            text-align: center; 
+            padding: 2rem; 
+            margin-top: 50px; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Studio Elegance</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#agendamento">Agendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="sobre">
+            <h2>Bem-vinda ao seu momento de cuidado</h2>
+            <p>Especialistas em realçar sua beleza natural com as técnicas mais modernas do mercado.</p>
+            <div class="galeria-sobre">
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600" alt="Corte de cabelo moderno">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600" alt="Ambiente do salão">
+                <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=600" alt="Tratamento capilar">
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+        <section id="servicos">
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-grid">
+                <article>
+                    <h3>Corte e Escova</h3>
+                    <p>Transforme seu visual com nossos stylists especialistas em visagismo.</p>
+                </article>
+                <article>
+                    <h3>Manicure e Pedicure</h3>
+                    <p>Cuidado completo para suas mãos e pés com esmaltação premium.</p>
+                </article>
+                <article>
+                    <h3>Coloração</h3>
+                    <p>Técnicas de luzes, balaiagem e cobertura total com produtos que não agridem os fios.</p>
+                </article>
+            </div>
+        </section>
+
+        <main>
+        <section id="agendamento">
+            <h2>Agende seu Horário</h2>
+            <p>Escolha o serviço e clique no botão para confirmar pelo WhatsApp.</p>
+            
+            <form id="formAgendamento">  
+                <div class="campo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Ex: Maria Silva">
+                </div>
+
+                <div class="campo">
+                    <label for="servico">Serviço Desejado:</label>
+                    <select id="servico">
+                        <option value="Corte de Cabelo">Corte de Cabelo</option>
+                        <option value="Coloração">Coloração</option>
+                        <option value="Manicure">Manicure</option>
+                        <option value="Limpeza de Pele">Limpeza de Pele</option>
+                    </select>
+                </div>
+
+                <div class="campo" style="display: flex; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="hora">Hora:</label>
+                        <input type="time" id="hora" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-footer">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p>&copy; 2025 Studio Elegance<br>Rua da Beleza, 123 - São Paulo</p>
+    </footer>
+
+    <script>
+        document.getElementById('formAgendamento').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // 1. Pegar os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const servico = document.getElementById('servico').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+
+            // 2. Coloque seu número de telefone aqui (DDI + DDD + Numero)
+            // Exemplo: 5511999999999 (55 Brasil, 11 SP)
+            const seuTelefone = "5511975997700"; 
+
+            // 3. Montar a mensagem
+            const mensagem = `Olá! Gostaria de agendar um horário.%0A%0A` +
+                             `*Nome:* ${nome}%0A` +
+                             `*Serviço:* ${servico}%0A` +
+                             `*Data:* ${data}%0A` +
+                             `*Hora:* ${hora}`;
+
+            // 4. Criar o link final
+            const linkWhatsapp = `https://wa.me/${seuTelefone}?text=${mensagem}`;
+
+            // 5. Abrir o WhatsApp em uma nova aba
+            window.open(linkWhatsapp, '_blank');
+        });
+    </script>
+
+</body>
+</html>
