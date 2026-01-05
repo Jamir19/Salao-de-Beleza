@@ -18,4 +18,4 @@ Não é necessário instalar nenhuma dependência pesada. Para visualizar o proj
 
 1. Faça o download ou clone este repositório:
    ```bash
-   git clone 
+   git clone git@github.com:Jamir19/Salao-de-Beleza.git
